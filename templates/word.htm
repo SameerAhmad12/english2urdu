@@ -1,0 +1,34 @@
+{% extends 'index.htm' %}
+{% load static %}
+
+{% block title %}{{ results.word | title }} | Definition of {{ results.word | title }} by English To Urdu Dictionary{% endblock %}
+{% block img %}<img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/logo-free-copy.png' %}" alt="{{ results.word | title }} | Definition of {{ results.word | title }} by English to Urdu Dictionary" >{% endblock %}
+{% block content %}
+<div >
+    <br>
+    <p >
+        <h4 align="center">Urdu Meaning of word {{ results.word | title }} : </h4>
+        <br>
+        <!-- {% for key, value in result.items %}
+        <ul align="center">
+            <li>
+                <p>{{ key }} : {{ value }}</p> 
+            </li>
+        </ul>
+        
+        {% endfor %} -->
+        <table width = "80%" height = "100%" align="center">
+            <!-- <tr>
+                <th>English</th>
+                <th>Urdu</th>
+            </tr> -->
+            {% for key, value in result.items %} 
+                <td  align="left" ><p ><strong>{{key}}</strong></p></td>
+                <td  align="right" ><p><strong>{{value}}</strong></p></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </p>
+    <br>
+</div>
+{% endblock %}

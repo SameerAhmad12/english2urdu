@@ -1,1 +1,1 @@
-web: gunicorn urdudictionary.wsgi:application --log-file -
+web: gunicorn --port=$port urdudictionary.wsgi:application --log-file -

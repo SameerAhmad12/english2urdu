@@ -1,1 +1,1 @@
-web: waitress-serve --port=$port urdudictionary.wsgi:application 
+web: gunicorn --port=$port urdudictionary.wsgi:application --log-file -

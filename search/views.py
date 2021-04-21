@@ -12,7 +12,7 @@ def word(request):
 #     URL = f"https://hamariweb.com/dictionaries/urdu-english-dictionary.aspx?eu={word}&sk=true"
 #     res = requests.get(URL)
    
-    URL = f"https://urdu.wordinn.com/face" 
+    URL = f"https://urdu.wordinn.com/{word}" 
     res1 = requests.get(URL)
     meaning2 = []
     meaning5= []

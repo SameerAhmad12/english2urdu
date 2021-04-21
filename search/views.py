@@ -16,7 +16,7 @@ def word(request):
     res1 = requests.get(URL)
     meaning2 = []
     meaning5= []
-    soup = BeautifulSoup(res1.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
+    soup = bs4.BeautifulSoup(res1.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
     for meaning in soup.find_all(class_ = "cell urdu"):
         meaning2.append(meaning.getText(""))
     for meaning3 in soup.find_all(class_="cell"):

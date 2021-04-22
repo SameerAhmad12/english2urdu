@@ -29,18 +29,44 @@ def word(request):
         # meaning = soup.find_all('div', {'value': '1'})
         
             meaning4.append(meaning3.getText(""))
+
+
+    results = {
+            'word' : word,
+                    }
+    di = {}
+    if meaning1:
+        for i in range(len(meaning1)):
+            di[meaning4[i]] = meaning1[i]
+        result=di
     else:
         word = 'Sorry, '+ word + ' Is Not Found In Our Database'
-        meaning4 = ''
-        meaning1=" "
-
+        di={"":word}
     
-    results = {
-        'word' : word,
-        }
-    di = {}
-    for i in range(len(meaning1)):
-        di[meaning4[i]] = meaning1[i]
-    return render(request, 'word.htm', {'results': results , 'result':di})
+    return render(request, 'word.htm', {'results': results, 'result':di})
+def word1(request):
+    word1 = request.GET['word1']
+    URL = f"https://meaningin.com/urdu-to-english/{word1}-in-english" 
+    res1 = requests.get(URL)
+    meaning1= []
+    if res1:
+         # soup = bs4.BeautifulSoup(res.text, 'lxml')
+        soup = bs4.BeautifulSoup(res1.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
+        for meaning in soup.find_all('p',class_="engtext"):
+            meaning1.append(meaning.getText(""))
+    
+    else:
+        print("No Result")
+    if len(meaning1):
+        xx=meaning1[0].split(" ")
+      
+    else:
+        xx=[" " ,f"Sorry, {word1} Is Not Found In Our Database"]
+    results1 = {
+            'word1' : word1,
+            'meaning':set(xx[1:])
+                    }
+    return render(request, 'word1.htm', {'results': results1})
+
 def about(request):
     return render(request, 'about.htm')

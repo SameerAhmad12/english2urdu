@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>{% block title %}English Urdu Dictionary{% endblock %}</title>
+    <title>{% block title %}English To Urdu Dictionary{% endblock %}</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
@@ -29,11 +29,11 @@
         
 	    <nav class="navbar navbar-expand-lg navbar-dark" >
            
-			<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
-			</button> -->
+			</button>
 
-			<div>
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
 				<div class="profile-section pt-3 pt-lg-0">
 				    {% block img %}<img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/logo-free-Copy.png' %}" alt="English To Urdu dictionary" >{% endblock %}		
 					
@@ -70,7 +70,7 @@
     <div class="main-wrapper" >
 	    <section class="cta-section theme-bg-light py-5">
 		    <div class="container text-center">
-				<marquee>  <h2 class="heading">English Urdu Dictionary</h2> </marquee>
+			    <h2 class="heading">English Urdu Dictionary</h2>
 				<div class="intro">Search Your Word Below</div>
 				
 
@@ -111,7 +111,7 @@
     </div><!--//main-wrapper-->
     
     
-
+    
     
     
 

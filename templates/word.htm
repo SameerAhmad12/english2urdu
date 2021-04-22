@@ -1,14 +1,14 @@
 {% extends 'index.htm' %}
 {% load static %}
 
-{% block title %}{{ results.word | title }} | Definition of {{ results.word | title }} by English To Urdu Dictionary{% endblock %}
-{% block img %}<img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/logo-free-Copy.png' %}" alt="English To Urdu dictionary" >{% endblock %}		
+{% block title %}{{ results.word | title }} | Definition of {{ results.word | title }} by English Urdu Dictionary{% endblock %}
+{% block img %}<img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'assets/images/logo-free-Copy.png' %}" alt="English Urdu dictionary" >{% endblock %}		
 
 {% block content %}
 <div >
     <br>
     <p >
-        <h4 align="center">Urdu Meaning of word {{ results.word | title }} : </h4>
+        <h5 align="center">Urdu Meaning of word {{ results.word | title }} : </h5>
         <br>
         <!-- {% for key in results.meaning %}
         

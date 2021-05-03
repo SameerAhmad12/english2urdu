@@ -15,13 +15,13 @@ def index(request):
         x=links.index('Jammu and Kashmir')
         result=links[x:(x+4)]
     results={
-        # "State" : result[0],
+        "Covid-19 Status " : "J&K",
         "Total Cases" : result[1],
         "Recovered" : result[2],
         "Active Cases":int(result[1])-int(result[2])-int(result[3]),
         "Deaths" : result[3]
     }
-    print(results)
+#     print(results)
     return render(request, 'index.htm',{'resul':results})
 
 def word(request):

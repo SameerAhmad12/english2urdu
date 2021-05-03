@@ -4,7 +4,25 @@ import requests
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.htm')
+    URL = f"https://www.mygov.in/corona-data/covid19-statewise-status"
+    r = requests.get(URL)
+    soup = bs4.BeautifulSoup(r.content, 'html.parser') # If this line causes an error, run 'pip install html5lib' or install html5lib
+    # print(soup.prettify())
+    links=[]
+    for link in soup.find_all(class_="field-item even"):
+        links.append(link.text)
+    if 'Jammu and Kashmir' in links:
+        x=links.index('Jammu and Kashmir')
+        result=links[x:(x+4)]
+    results={
+        # "State" : result[0],
+        "Total Cases" : result[1],
+        "Recovered" : result[2],
+        "Active Cases":int(result[1])-int(result[2])-int(result[3]),
+        "Deaths" : result[3]
+    }
+    print(results)
+    return render(request, 'index.htm',{'resul':results})
 
 def word(request):
 

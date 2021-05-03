@@ -16,10 +16,10 @@ def index(request):
         result=links[x:(x+4)]
     results={
         "Covid-19 Status " : "J&K",
-        "Total Cases" : result[1],
-        "Recovered" : result[2],
-        "Active Cases":int(result[1])-int(result[2])-int(result[3]),
-        "Deaths" : result[3]
+        " Total " : result[1],
+        " Recovered " : result[2],
+        " Active":int(result[1])-int(result[2])-int(result[3]),
+        " Deseased " : result[3]
     }
 #     print(results)
     return render(request, 'index.htm',{'resul':results})

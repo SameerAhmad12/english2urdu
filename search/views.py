@@ -19,7 +19,7 @@ def index(request):
         " Total " : result[1],
         " Recovered " : result[2],
         " Active":int(result[1])-int(result[2])-int(result[3]),
-        " Deseased " : result[3]
+        " Deceased " : result[3]
     }
 #     print(results)
     return render(request, 'index.htm',{'resul':results})
